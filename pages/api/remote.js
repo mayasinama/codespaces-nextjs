@@ -29,5 +29,5 @@ export default async function (req, res) {
     const $ = cheerio.load(data)
     const dummy = $.html()
     
-    res.send(dummy)
+    res.json({dummy})
   }
