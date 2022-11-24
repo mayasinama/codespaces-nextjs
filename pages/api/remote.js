@@ -20,7 +20,8 @@ export default async function (req, res) {
         // await page.goto('https://animixplay.to/v1/do-it-yourself/ep8', { waitUntil: 'networkidle0' });
     
         const page = await browser.newPage()
-        await page.goto('https://animixplay.to/v1/do-it-yourself/ep8')
+        await page.setUserAgent('Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0')
+        await page.goto('https://hxfile.co/embed-11uanpigh2v0.html')
     
         const data = await page.content()
     
