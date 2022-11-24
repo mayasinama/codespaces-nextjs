@@ -14,12 +14,13 @@ export default async function (req, res) {
       args: edgeChromium.args,
       headless: false,
     })
-    const [page] = await browser.pages();
 
-    await page.goto('https://animixplay.to/v1/do-it-yourself/ep8', { waitUntil: 'networkidle0' });
+    // await page.goto('https://animixplay.to/v1/do-it-yourself/ep8', { waitUntil: 'networkidle0' });
+
+    const page = await browser.newPage()
+    await page.goto('https://github.com')
 
     const data = await page.content()
-    console.log(data);
 
     await browser.close();
     
