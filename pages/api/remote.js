@@ -20,7 +20,7 @@ export default async function (req, res) {
         // await page.goto('https://animixplay.to/v1/do-it-yourself/ep8', { waitUntil: 'networkidle0' });
     
         const page = await browser.newPage()
-        await page.goto('https://animixplay.to/v1/do-it-yourself/ep8', { waitUntil: 'networkidle0' })
+        await page.goto('https://animixplay.to/v1/do-it-yourself/ep8')
     
         const data = await page.content()
     
