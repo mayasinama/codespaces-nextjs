@@ -5,7 +5,7 @@ import edgeChromium from 'chrome-aws-lambda'
 // it won't function correctly with "launch()"
 import puppeteer from 'puppeteer-core'
 
-import cheerio from 'cheerio'
+// import cheerio from 'cheerio'
 
 export default async function (req, res) {
     // Edge executable will return an empty string locally.
@@ -26,8 +26,8 @@ export default async function (req, res) {
 
     await browser.close();
 
-    const $ = cheerio.load(data)
-    const dummy = $.html()
+    // const $ = cheerio.load(data)
+    // const dummy = $.html()
     
-    res.json({dummy})
+    res.json({data})
   }
