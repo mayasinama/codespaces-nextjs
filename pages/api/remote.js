@@ -5,6 +5,8 @@ import edgeChromium from 'chrome-aws-lambda'
 // it won't function correctly with "launch()"
 import puppeteer from 'puppeteer-core'
 
+import cheerio from 'cheerio'
+
 export default async function (req, res) {
     // Edge executable will return an empty string locally.
     const executablePath = await edgeChromium.executablePath
@@ -18,11 +20,14 @@ export default async function (req, res) {
     // await page.goto('https://animixplay.to/v1/do-it-yourself/ep8', { waitUntil: 'networkidle0' });
 
     const page = await browser.newPage()
-    await page.goto('https://github.com')
+    await page.goto('https://animixplay.to/v1/do-it-yourself/ep8')
 
     const data = await page.content()
 
     await browser.close();
+
+    const $ = cheerio.load(data)
+    const dummy = $.html()
     
-    res.send(data)
+    res.send(dummy)
   }
